@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="icon.png"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-fields">
+        <h2>Gerador de Recibo</h2>
+        <input type="number" id="valor" placeholder="Valor (R$)" />
+        <input type="text" id="cliente" placeholder="Nome do Cliente" />
+        <input type="text" id="servico" placeholder="Serviço Prestado" />
+        <button onclick="generateReceipt()">Gerar Recibo</button>
+        <button onclick="printReceipt()" id="printButton" style="display: none">
+          Imprimir Recibo
+        </button>
+      </div>
+
+      <div id="receipt" class="receipt" style="display: none">
+        <div class="receipt-header">
+          <div>
+            <img
+              name="Logo"
+              class="logo"
+              src="logo.png"
+              height="50"
+              width="auto"
+              usemap="#Map"
+            />
+            <div class="company-info">
+              O.S. Net Telecom<br />
+              Rua Terencio Correia Ferrer, 299<br />
+              Lavras da Mangabeira - Ceará<br />
+              Telefones: (88) 99713-8306<br />
+              (88) 99290-0506
+            </div>
+          </div>
+          <div>
+            <br>
+            <div class="value-box">RECIBO<br /></div>
+            <br />
+            <div class="value-box">
+              Valor<br />
+              <span id="receiptValor">00,00</span>
+            </div>
+          </div>
+        </div>
+        <div class="receipt-body">
+          Recebemos de <span id="receiptCliente">(NOME DO CLIENTE)</span><br />
+          Correspondente a <span id="receiptServico">(SERVIÇO PRESTADO)</span>
+
+          <div
+            style="
+              margin-right: 10px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              margin-top: 10px;
+            "
+          >
+          <div>
+            <img src="qr-code.png" alt="QR Code Template" class="qr-code" />
+            <div>Chave: PIX<br>(88) 99290-0506</div>
+          </div>
+          <div>
+            <br><br><br><br>
+            <img src="sign.png" alt="Sign" class="sign" /><br />
+            <div
+              style="
+                margin-right: 10px;
+                border-top: 1px solid black;
+                border-radius: 0%;
+                padding-top: 5px;
+                text-align: center;
+              "
+            >
+              ORLANDO LEITE ROLIM
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function generateReceipt() {
+        let valor = document.getElementById("valor").value;
+        const cliente = document.getElementById("cliente").value;
+        const servico = document.getElementById("servico").value;
+
+        // Format the value with two decimal places
+        if (valor) {
+          valor = parseFloat(valor).toFixed(2);
+        } else {
+          valor = "00,00";
+        }
+
+        document.getElementById("receiptValor").textContent = valor;
+        document.getElementById("receiptCliente").textContent =
+          cliente || "(NOME DO CLIENTE)";
+        document.getElementById("receiptServico").textContent =
+          servico || "(SERVIÇO PRESTADO)";
+
+        document.getElementById("receipt").style.display = "block";
+        document.getElementById("printButton").style.display = "block";
+      }
+
+      function printReceipt() {
+        window.print();
+      }
+    </script>
+  </body>
+</html>

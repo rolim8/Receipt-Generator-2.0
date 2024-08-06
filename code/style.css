@@ -1,0 +1,115 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+}
+.form-fields {
+  background-color: white;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.receipt {
+  background-color: white;
+  width: 100%;
+  max-width: 595px;
+  height: auto;
+  border: 2px solid black;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.company-info {
+  font-size: 14px;
+  line-height: 1;
+}
+.value-box {
+  border: 1px solid black;
+  padding: 10px;
+  width: 250px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 16px;
+}
+.value-box span {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+#receiptValor {
+  font-weight: bold;
+  font-size: 18px;
+}
+#receiptValor::before {
+  content: "R$ ";
+  font-weight: bold;
+  font-size: 18px;
+  margin-right: 5px;
+}
+.qr-code {
+  width: 150px;
+  height: 150px;
+  margin-left: auto;
+}
+.sign {
+  width: auto;
+  height: 30px;
+  margin-left: auto;
+}
+input,
+button {
+  margin: 10px 0;
+  width: calc(100% - 20px);
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+}
+.logo {
+  border-radius: 0;
+}
+.receipt-body {
+  font-size: 16px;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #receipt,
+  #receipt * {
+    visibility: visible;
+  }
+  #receipt {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    max-width: 595px;
+    height: auto;
+  }
+}
