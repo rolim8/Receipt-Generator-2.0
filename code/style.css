@@ -1,115 +1,149 @@
+/* Estilos para o corpo da página */
 body {
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 0;
-  background-color: #f0f0f0;
-  padding: 20px;
+  font-family: Arial, sans-serif; /* Define a fonte padrão para Arial, com uma fonte genérica como alternativa */
+  display: flex; /* Utiliza o Flexbox para o layout */
+  justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
+  align-items: flex-start; /* Alinha o conteúdo verticalmente ao topo */
+  /*height: 100vh;*/ /* Comentado: poderia ser usado para ocupar toda a altura da viewport */
+  margin: 0; /* Remove as margens padrão do body */
+  background-color: #f0f0f0; /* Define uma cor de fundo clara */
+  padding: 20px; /* Adiciona preenchimento ao redor do conteúdo */
 }
+
+/* Estilos para o container principal */
 .container {
-  background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 80%;
-  max-width: 800px;
+  background-color: white; /* Define a cor de fundo branca para o container */
+  padding: 20px; /* Adiciona preenchimento interno ao container */
+  border-radius: 8px; /* Adiciona bordas arredondadas ao container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil ao container */
+  width: 80%; /* Define a largura do container como 80% da largura do pai */
+  max-width: 800px; /* Define a largura máxima do container */
 }
+
+/* Estilos para a seção de campos do formulário */
 .form-fields {
-  background-color: white;
-  padding: 10px 0;
-  margin-bottom: 20px;
+  background-color: white; /* Define a cor de fundo branca para os campos do formulário */
+  padding: 10px 0; /* Adiciona preenchimento vertical */
+  margin-bottom: 20px; /* Adiciona uma margem inferior */
 }
+
+/* Estilos para o recibo */
 .receipt {
-  background-color: white;
-  width: 100%;
-  max-width: 595px;
-  height: auto;
-  border: 2px solid black;
-  padding: 20px;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  background-color: white; /* Define a cor de fundo branca para o recibo */
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  max-width: 595px; /* Define a largura máxima do recibo */
+  height: auto; /* Permite que a altura se ajuste ao conteúdo */
+  border: 2px solid black; /* Adiciona uma borda preta de 2px */
+  padding: 20px; /* Adiciona preenchimento interno */
+  margin-top: 20px; /* Adiciona uma margem superior */
+  display: flex; /* Utiliza o Flexbox para o layout do recibo */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  justify-content: space-between; /* Distribui o espaço igualmente entre os itens */
 }
+
+/* Estilos para o cabeçalho do recibo */
 .receipt-header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 10px;
+  display: flex; /* Utiliza o Flexbox para o layout do cabeçalho */
+  justify-content: space-between; /* Distribui o espaço igualmente entre os itens do cabeçalho */
+  margin-bottom: 10px; /* Adiciona uma margem inferior */
 }
+
+/* Estilos para as informações da empresa */
 .company-info {
-  font-size: 14px;
-  line-height: 1;
+  font-size: 14px; /* Define o tamanho da fonte */
+  line-height: 1; /* Define o espaçamento entre linhas */
 }
+
+/* Estilos para as caixas de valor */
 .value-box {
-  border: 1px solid black;
-  padding: 10px;
-  width: 250px;
-  border-radius: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  font-size: 16px;
+  border: 1px solid black; /* Adiciona uma borda preta de 1px */
+  padding: 10px; /* Adiciona preenchimento interno */
+  width: 250px; /* Define a largura das caixas */
+  border-radius: 8px; /* Adiciona bordas arredondadas */
+  display: flex; /* Utiliza o Flexbox para o layout */
+  flex-direction: column; /* Alinha os itens verticalmente */
+  align-items: center; /* Alinha os itens ao centro horizontalmente */
+  text-align: center; /* Alinha o texto ao centro */
+  font-size: 16px; /* Define o tamanho da fonte */
 }
+
+/* Estilos específicos para o elemento span dentro da caixa de valor */
 .value-box span {
-  display: flex;
-  align-items: center;
-  font-weight: bold;
+  display: flex; /* Utiliza o Flexbox para o layout */
+  align-items: center; /* Alinha os itens verticalmente ao centro */
+  font-weight: bold; /* Define a fonte como negrito */
 }
+
+/* Estilos para o valor do recibo */
 #receiptValor {
-  font-weight: bold;
-  font-size: 18px;
+  font-weight: bold; /* Define a fonte como negrito */
+  font-size: 18px; /* Define o tamanho da fonte */
 }
+
+/* Adiciona o prefixo "R$" ao valor do recibo */
 #receiptValor::before {
-  content: "R$ ";
-  font-weight: bold;
-  font-size: 18px;
-  margin-right: 5px;
+  content: "R$ "; /* Adiciona o conteúdo "R$ " antes do valor */
+  font-weight: bold; /* Define a fonte como negrito */
+  font-size: 18px; /* Define o tamanho da fonte */
+  margin-right: 5px; /* Adiciona uma margem à direita */
 }
+
+/* Estilos para o QR Code */
 .qr-code {
-  width: 150px;
-  height: 150px;
-  margin-left: auto;
+  width: 150px; /* Define a largura do QR Code */
+  height: 150px; /* Define a altura do QR Code */
+  margin-left: auto; /* Alinha o QR Code à direita */
 }
+
+/* Estilos para a assinatura */
 .sign {
-  width: auto;
-  height: 30px;
-  margin-left: auto;
-  margin-bottom: -7px;
+  width: auto; /* Define a largura como automática */
+  height: 30px; /* Define a altura da assinatura */
+  margin-left: auto; /* Alinha a assinatura à direita */
+  margin-bottom: -7px; /* Ajusta a margem inferior */
 }
+
+/* Estilos para os campos de entrada e botões */
 input,
 button {
-  margin: 10px 0;
-  width: calc(100% - 20px);
-  border-radius: 4px;
-  padding: 10px;
-  font-size: 16px;
+  margin: 10px 0; /* Adiciona margens superior e inferior */
+  width: calc(
+    100% - 20px
+  ); /* Define a largura como 100% menos 20px (para acomodar o preenchimento) */
+  border-radius: 4px; /* Adiciona bordas arredondadas */
+  padding: 10px; /* Adiciona preenchimento interno */
+  font-size: 16px; /* Define o tamanho da fonte */
 }
+
+/* Estilos para o logo */
 .logo {
-  border-radius: 0;
+  border-radius: 0; /* Remove as bordas arredondadas do logo */
 }
+
+/* Estilos para o corpo do recibo */
 .receipt-body {
-  font-size: 16px;
-  background-color: white;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 10px 0;
+  font-size: 16px; /* Define o tamanho da fonte */
+  background-color: white; /* Define a cor de fundo branca */
+  padding: 10px; /* Adiciona preenchimento interno */
+  border: 1px solid #ccc; /* Adiciona uma borda cinza clara */
+  margin: 10px 0; /* Adiciona margens superior e inferior */
 }
+
+/* Estilos para a impressão do recibo */
 @media print {
   body * {
-    visibility: hidden;
+    visibility: hidden; /* Torna todo o conteúdo invisível durante a impressão */
   }
   #receipt,
   #receipt * {
-    visibility: visible;
+    visibility: visible; /* Torna o recibo e seu conteúdo visíveis durante a impressão */
   }
   #receipt {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    max-width: 595px;
-    height: auto;
+    position: absolute; /* Remove o recibo do fluxo normal do layout */
+    left: 0; /* Posiciona o recibo no canto esquerdo */
+    top: 0; /* Posiciona o recibo no canto superior */
+    width: 100%; /* Define a largura como 100% da página */
+    max-width: 595px; /* Define a largura máxima do recibo */
+    height: auto; /* Ajusta a altura automaticamente */
   }
 }

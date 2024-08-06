@@ -1,28 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
+    <!-- Link para o arquivo de estilos CSS -->
     <link href="style.css" rel="stylesheet" />
+    <!-- Ícone do site -->
     <link rel="shortcut icon" href="icon.png"/>
+    <!-- Configuração do charset e da visualização -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   </head>
   <body>
+    <!-- Container principal do formulário e recibo -->
     <div class="container">
+      <!-- Seção onde ficam os campos do formulário -->
       <div class="form-fields">
         <h2>Gerador de Recibo</h2>
+        <!-- Campo para entrada do valor -->
         <input type="number" id="valor" placeholder="Valor (R$)" />
+        <!-- Campo para entrada do nome do cliente -->
         <input type="text" id="cliente" placeholder="Nome do Cliente" />
+        <!-- Campo para entrada do serviço prestado -->
         <input type="text" id="servico" placeholder="Serviço Prestado" />
+        <!-- Botão para gerar o recibo -->
         <button onclick="generateReceipt()">Gerar Recibo</button>
+        <!-- Botão para imprimir o recibo, inicialmente oculto -->
         <button onclick="printReceipt()" id="printButton" style="display: none">
           Imprimir Recibo
         </button>
       </div>
 
+      <!-- Seção onde o recibo gerado será exibido -->
       <div id="receipt" class="receipt" style="display: none">
         <div class="receipt-header">
           <div>
+            <!-- Logo da empresa com mapa de imagem para possíveis links -->
             <img
               name="Logo"
               class="logo"
@@ -32,6 +43,7 @@
               usemap="#Map"
             />
             <div class="company-info">
+              <!-- Informações da empresa -->
               O.S. Net Telecom<br />
               Rua Terencio Correia Ferrer, 299<br />
               Lavras da Mangabeira - Ceará<br />
@@ -41,8 +53,10 @@
           </div>
           <div>
             <br>
+            <!-- Caixa destacando que é um recibo -->
             <div class="value-box">RECIBO<br /></div>
             <br />
+            <!-- Caixa com o valor do recibo -->
             <div class="value-box">
               Valor<br />
               <span id="receiptValor">00,00</span>
@@ -50,6 +64,7 @@
           </div>
         </div>
         <div class="receipt-body">
+          <!-- Informações do recibo -->
           Recebemos de <span id="receiptCliente">(NOME DO CLIENTE)</span><br />
           Correspondente a <span id="receiptServico">(SERVIÇO PRESTADO)</span>
 
@@ -63,11 +78,13 @@
             "
           >
           <div>
+            <!-- QR Code e chave PIX -->
             <img src="qr-code.png" alt="QR Code Template" class="qr-code" />
             <div>Chave: PIX<br>(88) 99290-0506</div>
           </div>
           <div>
             <br><br><br><br>
+            <!-- Assinatura digital -->
             <img src="sign.png" alt="Sign" class="sign" /><br />
             <div
               style="
@@ -86,28 +103,33 @@
     </div>
 
     <script>
+      // Função para gerar o recibo
       function generateReceipt() {
+        // Obtém os valores dos campos do formulário
         let valor = document.getElementById("valor").value;
         const cliente = document.getElementById("cliente").value;
         const servico = document.getElementById("servico").value;
-
-        // Format the value with two decimal places
+        
+        // Se valor estiver preenchido, formata com duas casas decimais
         if (valor) {
           valor = parseFloat(valor).toFixed(2);
         } else {
           valor = "00,00";
         }
 
+        // Atualiza o recibo com os valores fornecidos
         document.getElementById("receiptValor").textContent = valor;
         document.getElementById("receiptCliente").textContent =
           cliente || "(NOME DO CLIENTE)";
         document.getElementById("receiptServico").textContent =
           servico || "(SERVIÇO PRESTADO)";
 
+        // Mostra o recibo e o botão de imprimir
         document.getElementById("receipt").style.display = "block";
         document.getElementById("printButton").style.display = "block";
       }
 
+      // Função para imprimir o recibo
       function printReceipt() {
         window.print();
       }
