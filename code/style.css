@@ -77,6 +77,7 @@ body {
   width: auto;
   height: 30px;
   margin-left: auto;
+  margin-bottom: -7px;
 }
 input,
 button {
