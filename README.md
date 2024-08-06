@@ -27,28 +27,4 @@ Você pode acessar a aplicação online através do seguinte link:
 
 ## Configurações de Impressão
 
-Garantir que o recibo seja centralizado no topo da página ao imprimir e que informações indesejadas como cabeçalhos e rodapés não apareçam, utilize as seguintes configurações:
-
-```css
-@media print {
-  body * {
-    visibility: hidden;
-  }
-  #receipt,
-  #receipt * {
-    visibility: visible;
-  }
-  #receipt {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    width: 100%;
-    max-width: 595px;
-    height: auto;
-    margin: 0;
-  }
-  @page {
-    margin: 0;
-  }
-}
+Garantir que o recibo seja centralizado no topo da página ao imprimir e que informações indesejadas como cabeçalhos e rodapés não apareçam.
