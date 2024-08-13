@@ -105,6 +105,12 @@
     </div>
 
     <script>
+      // Função para formatar a data no formato DD/MM/YYYY
+      function formatDate(dateString) {
+        const [year, month, day] = dateString.split("-");
+        return `${day.padStart(2, "0")}/${month.padStart(2, "0")}/${year}`;
+      }
+
       // Função para gerar o recibo
       function generateReceipt() {
         let valor = document.getElementById("valor").value;
@@ -119,14 +125,15 @@
           valor = "00,00";
         }
 
+        // Formata a data no formato DD/MM/YYYY
+        const formattedDate = data ? formatDate(data) : "(DATA)";
+
         document.getElementById("receiptValor").textContent = valor;
         document.getElementById("receiptCliente").textContent =
           cliente || "(NOME DO CLIENTE)";
         document.getElementById("receiptServico").textContent =
           servico || "(SERVIÇO PRESTADO)";
-        document.getElementById("receiptData").textContent = data
-          ? new Date(data).toLocaleDateString("pt-BR")
-          : "(DATA)";
+        document.getElementById("receiptData").textContent = formattedDate;
 
         document.getElementById("receipt").style.display = "block";
         document.getElementById("printButton").style.display = "block";
